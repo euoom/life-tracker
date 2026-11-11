@@ -1,7 +1,7 @@
 # Life Tracker implementation map
 
 This map is maintained manually. Source code remains authoritative. The Swift
-implementation is not yet compiled or device-tested. Server ingestion has local
+implementation compiled successfully in GitHub Actions on macOS, but is not yet device-tested. Server ingestion has local
 integration tests. Analysis and knowledge-base writing are planned boundaries,
 not implemented workers.
 

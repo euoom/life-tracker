@@ -1,7 +1,7 @@
 # iPhone prototype
 
 SwiftUI + AVFoundation + Core Location + App Intents. The Linux workspace cannot
-compile or sign iOS apps. Sources are provided, not a tested IPA. Real-device
+compile or sign iOS apps. The first macOS CI compile succeeded; the unsigned IPA has not been signed or device-tested. Real-device
 validation is required before using this to retain important daily records.
 
 ## Build on a Mac or remote macOS machine
@@ -25,7 +25,7 @@ we have not verified signing with the Live Activity extension through AltStore.
 Do not buy a membership before confirming the intended free signing path.
 
 `../.github/workflows/ios-build.yml` contains a manually triggered macOS compile
-check. It is prepared locally only; no remote repository or CI run is created.
+check. The first run succeeded at https://github.com/euoom/life-tracker/actions/runs/43023601823.
 It produces no signed installable IPA.
 
 ## First device test
@@ -92,10 +92,10 @@ No WireGuard profile is created or switched by this app.
 The repository includes `scripts/build-unsigned.sh`, which needs macOS/Xcode.
 It generates the project, compiles for a physical iPhone and packages
 `ios/build/LifeTracker-unsigned.ipa`. This is an unsigned IPA, not installable
-without signing. The script has not yet run on macOS.
+without signing. The script succeeded in the first macOS CI run.
 
 1. Put the source in your own GitHub repository (or transfer it to a remote Mac).
-   This workspace has not uploaded it or configured a Git remote.
+   The public remote is https://github.com/euoom/life-tracker.
 2. In GitHub Actions choose **Build unsigned iOS prototype**, then **Run workflow**.
    On a successful build download the **LifeTracker-unsigned** artifact and unzip
    the outer artifact archive to obtain `LifeTracker-unsigned.ipa`.

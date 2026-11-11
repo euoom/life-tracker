@@ -33,6 +33,6 @@ uv run uvicorn main:app --host 0.0.0.0 --port 24700 --reload
 - [아이폰 빌드·설치·단축어·실기기 시험](ios/README.md)
 - [수동 구조 지도](docs/architecture.md)
 
-아이폰 소스는 아직 Xcode/실기기에서 검증되지 않았습니다. API 통합 테스트와
+아이폰 소스는 GitHub Actions의 Xcode 빌드를 통과했으며 실기기에서는 아직 검증하지 않았습니다. API 통합 테스트와
 아이폰 컴파일·설치 검증은 별도입니다. 실제 기록 수집은 설치와 설정 후에만
 시작하며 PC 원본은 자동 삭제하지 않습니다.

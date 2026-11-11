@@ -21,8 +21,8 @@
   "nodes": [
     {
       "id": "ios.ui",
-      "name": "아이폰 앱 화면 · 소스 초안",
-      "label": "아이폰 앱 화면 · 소스 초안",
+      "name": "아이폰 앱 화면 · 빌드 확인·기기 미검증",
+      "label": "아이폰 앱 화면 · 빌드 확인·기기 미검증",
       "kind": "ui_component",
       "namespace": "ios",
       "position": {
@@ -36,8 +36,8 @@
     },
     {
       "id": "ios.shortcuts",
-      "name": "단축어 동작 · 소스 초안",
-      "label": "단축어 동작 · 소스 초안",
+      "name": "단축어 동작 · 빌드 확인·기기 미검증",
+      "label": "단축어 동작 · 빌드 확인·기기 미검증",
       "kind": "service_call",
       "namespace": "ios",
       "position": {
@@ -51,8 +51,8 @@
     },
     {
       "id": "ios.record",
-      "name": "녹음·시간별 분할 · 소스 초안",
-      "label": "녹음·시간별 분할 · 소스 초안",
+      "name": "녹음·시간별 분할 · 빌드 확인·기기 미검증",
+      "label": "녹음·시간별 분할 · 빌드 확인·기기 미검증",
       "kind": "service_call",
       "namespace": "ios",
       "position": {
@@ -66,8 +66,8 @@
     },
     {
       "id": "ios.location",
-      "name": "위치 로그 수집 · 소스 초안",
-      "label": "위치 로그 수집 · 소스 초안",
+      "name": "위치 로그 수집 · 빌드 확인·기기 미검증",
+      "label": "위치 로그 수집 · 빌드 확인·기기 미검증",
       "kind": "service_call",
       "namespace": "ios",
       "position": {
@@ -81,8 +81,8 @@
     },
     {
       "id": "ios.messages",
-      "name": "새 메시지 기록 · 소스 초안",
-      "label": "새 메시지 기록 · 소스 초안",
+      "name": "새 메시지 기록 · 빌드 확인·기기 미검증",
+      "label": "새 메시지 기록 · 빌드 확인·기기 미검증",
       "kind": "service_call",
       "namespace": "ios",
       "position": {
@@ -111,8 +111,8 @@
     },
     {
       "id": "ios.sync",
-      "name": "백그라운드 전송 · 소스 초안",
-      "label": "백그라운드 전송 · 소스 초안",
+      "name": "백그라운드 전송 · 빌드 확인·기기 미검증",
+      "label": "백그라운드 전송 · 빌드 확인·기기 미검증",
       "kind": "service_call",
       "namespace": "ios",
       "position": {
