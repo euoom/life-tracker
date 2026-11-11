@@ -1,0 +1,58 @@
+name: LifeTracker
+options:
+  bundleIdPrefix: local.euoom
+  deploymentTarget:
+    iOS: '17.0'
+settings:
+  base:
+    SWIFT_VERSION: '5.0'
+    TARGETED_DEVICE_FAMILY: '1'
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: ''
+targets:
+  LifeTracker:
+    type: application
+    platform: iOS
+    sources:
+      - LifeTracker
+      - Shared
+    info:
+      path: Generated/AppInfo.plist
+      properties:
+        CFBundleDisplayName: Life Tracker
+        UILaunchScreen: {}
+        NSMicrophoneUsageDescription: 외출 중 대화와 주변 활동을 기록합니다.
+        NSLocationWhenInUseUsageDescription: 외출 중 위치 로그를 기록합니다.
+        NSLocationAlwaysAndWhenInUseUsageDescription: 화면이 잠긴 동안에도 외출 위치를 기록합니다.
+        NSLocalNetworkUsageDescription: 집 네트워크의 PC로 기록을 전송합니다.
+        UIBackgroundModes: [audio, location]
+        NSSupportsLiveActivities: true
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+          NSAllowsArbitraryLoads: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.euoom.lifetracker
+    dependencies:
+      - target: TrackerActivity
+  TrackerActivity:
+    type: app-extension
+    platform: iOS
+    sources:
+      - LiveActivity
+      - Shared
+    info:
+      path: Generated/WidgetInfo.plist
+      properties:
+        CFBundleDisplayName: Tracker Recording
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.euoom.lifetracker.activity
+        APPLICATION_EXTENSION_API_ONLY: YES
+schemes:
+  LifeTracker:
+    build:
+      targets:
+        LifeTracker: all

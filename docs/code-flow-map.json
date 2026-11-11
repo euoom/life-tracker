@@ -1,0 +1,375 @@
+{
+  "run_id": "life-tracker-manual-prototype",
+  "mode": "manual",
+  "columns": [
+    {
+      "id": "surface",
+      "label": "화면·진입점",
+      "x": 0
+    },
+    {
+      "id": "logic",
+      "label": "내부 처리",
+      "x": 500
+    },
+    {
+      "id": "storage",
+      "label": "저장소",
+      "x": 1000
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ios.ui",
+      "name": "아이폰 앱 화면 · 소스 초안",
+      "label": "아이폰 앱 화면 · 소스 초안",
+      "kind": "ui_component",
+      "namespace": "ios",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "source": {
+        "file": "ios/LifeTracker/LifeTrackerApp.swift",
+        "line": 23
+      }
+    },
+    {
+      "id": "ios.shortcuts",
+      "name": "단축어 동작 · 소스 초안",
+      "label": "단축어 동작 · 소스 초안",
+      "kind": "service_call",
+      "namespace": "ios",
+      "position": {
+        "x": 0,
+        "y": 180
+      },
+      "source": {
+        "file": "ios/LifeTracker/Intents.swift",
+        "line": 3
+      }
+    },
+    {
+      "id": "ios.record",
+      "name": "녹음·시간별 분할 · 소스 초안",
+      "label": "녹음·시간별 분할 · 소스 초안",
+      "kind": "service_call",
+      "namespace": "ios",
+      "position": {
+        "x": 500,
+        "y": 0
+      },
+      "source": {
+        "file": "ios/LifeTracker/TrackerStore.swift",
+        "line": 80
+      }
+    },
+    {
+      "id": "ios.location",
+      "name": "위치 로그 수집 · 소스 초안",
+      "label": "위치 로그 수집 · 소스 초안",
+      "kind": "service_call",
+      "namespace": "ios",
+      "position": {
+        "x": 500,
+        "y": 180
+      },
+      "source": {
+        "file": "ios/LifeTracker/TrackerStore.swift",
+        "line": 169
+      }
+    },
+    {
+      "id": "ios.messages",
+      "name": "새 메시지 기록 · 소스 초안",
+      "label": "새 메시지 기록 · 소스 초안",
+      "kind": "service_call",
+      "namespace": "ios",
+      "position": {
+        "x": 500,
+        "y": 360
+      },
+      "source": {
+        "file": "ios/LifeTracker/TrackerStore.swift",
+        "line": 212
+      }
+    },
+    {
+      "id": "ios.files",
+      "name": "아이폰 음성·이벤트 파일",
+      "label": "아이폰 음성·이벤트 파일",
+      "kind": "db_table",
+      "namespace": "ios",
+      "position": {
+        "x": 1000,
+        "y": 0
+      },
+      "source": {
+        "file": "ios/LifeTracker/TrackerStore.swift",
+        "line": 17
+      }
+    },
+    {
+      "id": "ios.sync",
+      "name": "백그라운드 전송 · 소스 초안",
+      "label": "백그라운드 전송 · 소스 초안",
+      "kind": "service_call",
+      "namespace": "ios",
+      "position": {
+        "x": 500,
+        "y": 540
+      },
+      "source": {
+        "file": "ios/LifeTracker/TransferManager.swift",
+        "line": 20
+      }
+    },
+    {
+      "id": "ios.receipts",
+      "name": "아이폰 수신 확인 · 원본 유지",
+      "label": "아이폰 수신 확인 · 원본 유지",
+      "kind": "db_table",
+      "namespace": "ios",
+      "position": {
+        "x": 1000,
+        "y": 360
+      },
+      "source": {
+        "file": "ios/LifeTracker/TrackerStore.swift",
+        "line": 232
+      }
+    },
+    {
+      "id": "server.api",
+      "name": "PC 수신 API · 통합 검증",
+      "label": "PC 수신 API · 통합 검증",
+      "kind": "endpoint",
+      "namespace": "server",
+      "position": {
+        "x": 0,
+        "y": 920
+      },
+      "source": {
+        "file": "server/life_tracker/app.py",
+        "line": 41
+      }
+    },
+    {
+      "id": "server.event",
+      "name": "이벤트 검증·중복 제거·저장",
+      "label": "이벤트 검증·중복 제거·저장",
+      "kind": "service_call",
+      "namespace": "server",
+      "position": {
+        "x": 500,
+        "y": 820
+      },
+      "source": {
+        "file": "server/life_tracker/app.py",
+        "line": 92
+      }
+    },
+    {
+      "id": "server.audio",
+      "name": "음성 체크섬 확인·원본 저장",
+      "label": "음성 체크섬 확인·원본 저장",
+      "kind": "service_call",
+      "namespace": "server",
+      "position": {
+        "x": 500,
+        "y": 1040
+      },
+      "source": {
+        "file": "server/life_tracker/app.py",
+        "line": 110
+      }
+    },
+    {
+      "id": "server.db",
+      "name": "PC 수신 이력 DB",
+      "label": "PC 수신 이력 DB",
+      "kind": "db_table",
+      "namespace": "server",
+      "position": {
+        "x": 1000,
+        "y": 820
+      },
+      "source": {
+        "file": "server/life_tracker/app.py",
+        "line": 65
+      }
+    },
+    {
+      "id": "server.files",
+      "name": "PC 음성 원본 · 계속 보관",
+      "label": "PC 음성 원본 · 계속 보관",
+      "kind": "db_table",
+      "namespace": "server",
+      "position": {
+        "x": 1000,
+        "y": 1040
+      },
+      "source": {
+        "file": "server/life_tracker/app.py",
+        "line": 137
+      }
+    },
+    {
+      "id": "agent.review",
+      "name": "예정 · Gemini 인식·결과 검토",
+      "label": "예정 · Gemini 인식·결과 검토",
+      "kind": "service_call",
+      "namespace": "agent",
+      "position": {
+        "x": 500,
+        "y": 1420
+      }
+    },
+    {
+      "id": "kb.records",
+      "name": "예정 · 이벤트·Daily 기록",
+      "label": "예정 · 이벤트·Daily 기록",
+      "kind": "service_call",
+      "namespace": "kb",
+      "position": {
+        "x": 1000,
+        "y": 1420
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "source": "ios.ui",
+      "target": "ios.record",
+      "kind": "calls",
+      "label": ""
+    },
+    {
+      "id": "e1",
+      "source": "ios.ui",
+      "target": "ios.location",
+      "kind": "calls",
+      "label": ""
+    },
+    {
+      "id": "e2",
+      "source": "ios.shortcuts",
+      "target": "ios.record",
+      "kind": "calls",
+      "label": ""
+    },
+    {
+      "id": "e3",
+      "source": "ios.shortcuts",
+      "target": "ios.location",
+      "kind": "calls",
+      "label": ""
+    },
+    {
+      "id": "e4",
+      "source": "ios.shortcuts",
+      "target": "ios.messages",
+      "kind": "calls",
+      "label": ""
+    },
+    {
+      "id": "e5",
+      "source": "ios.record",
+      "target": "ios.files",
+      "kind": "calls",
+      "label": ""
+    },
+    {
+      "id": "e6",
+      "source": "ios.location",
+      "target": "ios.files",
+      "kind": "calls",
+      "label": ""
+    },
+    {
+      "id": "e7",
+      "source": "ios.messages",
+      "target": "ios.files",
+      "kind": "calls",
+      "label": ""
+    },
+    {
+      "id": "e8",
+      "source": "ios.files",
+      "target": "ios.sync",
+      "kind": "calls",
+      "label": ""
+    },
+    {
+      "id": "e9",
+      "source": "ios.sync",
+      "target": "server.api",
+      "kind": "calls",
+      "label": ""
+    },
+    {
+      "id": "e10",
+      "source": "server.api",
+      "target": "server.event",
+      "kind": "calls",
+      "label": ""
+    },
+    {
+      "id": "e11",
+      "source": "server.api",
+      "target": "server.audio",
+      "kind": "calls",
+      "label": ""
+    },
+    {
+      "id": "e12",
+      "source": "server.event",
+      "target": "server.db",
+      "kind": "calls",
+      "label": ""
+    },
+    {
+      "id": "e13",
+      "source": "server.audio",
+      "target": "server.db",
+      "kind": "calls",
+      "label": ""
+    },
+    {
+      "id": "e14",
+      "source": "server.audio",
+      "target": "server.files",
+      "kind": "calls",
+      "label": ""
+    },
+    {
+      "id": "e15",
+      "source": "server.api",
+      "target": "ios.receipts",
+      "kind": "calls",
+      "label": ""
+    },
+    {
+      "id": "e16",
+      "source": "server.files",
+      "target": "agent.review",
+      "kind": "calls",
+      "label": "구현 예정"
+    },
+    {
+      "id": "e17",
+      "source": "server.db",
+      "target": "agent.review",
+      "kind": "calls",
+      "label": "구현 예정"
+    },
+    {
+      "id": "e18",
+      "source": "agent.review",
+      "target": "kb.records",
+      "kind": "calls",
+      "label": "구현 예정"
+    }
+  ]
+}

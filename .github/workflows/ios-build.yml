@@ -1,0 +1,21 @@
+name: Build unsigned iOS prototype
+on:
+  workflow_dispatch:
+jobs:
+  compile:
+    runs-on: macos-15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Compile and package unsigned IPA
+        run: bash ios/scripts/build-unsigned.sh
+      - name: Save unsigned IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: LifeTracker-unsigned
+          path: ios/build/LifeTracker-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 7

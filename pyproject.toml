@@ -1,0 +1,10 @@
+[project]
+name = "life-tracker"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.13"
+dependencies = [
+    "dnslib>=0.9.26",
+    "fastapi>=0.141.1",
+    "uvicorn>=0.52.4",
+]
